@@ -21,7 +21,7 @@ namespace RSAEncryption
             
         }
 
-        #region-----Sifravimas ir desifravimas-----
+        
         static public byte[] Encryption(byte[] Data, RSAParameters RSAKey, bool DoOAEPPadding)
         {
             try
@@ -61,16 +61,16 @@ namespace RSAEncryption
                 return null;
             }
         }
-        #endregion
+        
 
-        #region--Kintamieji
+        
         UnicodeEncoding ByteConverter = new UnicodeEncoding();
         RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();
         byte[] plaintext;
         byte[] encryptedtext;
-        #endregion
+       
 
-        #region-- Funkcijos Implementacija
+        
         private void button1_Click(object sender, EventArgs e)
         {
             plaintext = ByteConverter.GetBytes(txtplain.Text);
@@ -88,7 +88,7 @@ namespace RSAEncryption
             byte[] decryptedtex = Decryption(src, RSA.ExportParameters(true), false);
             txtdecrypt.Text = ByteConverter.GetString(decryptedtex);
         }
-        #endregion
+        
 
         private void button3_Click(object sender, EventArgs e)
         {
